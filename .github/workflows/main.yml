@@ -34,7 +34,7 @@ jobs:
         -e 'DEV.postman_environment.json' \
         -d 'test data.csv' \
         -r cli,htmlextra \
-        --reporter-htmlextra-export .newman/index.html
+        --reporter-htmlextra-export newman/index.html
         
     - name: upload artifacts
       if: always() #even if previous steps fail execute this step
@@ -48,5 +48,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4.1.0
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: .newman/
+        publish_dir: newman/
     
