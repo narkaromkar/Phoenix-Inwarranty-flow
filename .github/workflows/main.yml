@@ -41,4 +41,11 @@ jobs:
       with:
         name: newman test results
         path: newman/*.html
+
+    - name: deploy github pages for test results
+      if: always()
+      uses: peaceiris/actions-gh-pages@v4.1.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: newman/
     
