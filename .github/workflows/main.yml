@@ -26,13 +26,13 @@ jobs:
     - name: install newman and htmlextra
       run: |
         npm install -g newman
-        mpm install -g newman-reporter-htmlextra
+        npm install -g newman-reporter-htmlextra
 
     - name: Run the collection with newman
       run: |
-        newman run 'In Warrenty Flow.postman_collection.json'\
-        -e 'DEV.postman_environment.json'\
-        -d 'test data.csv'\
+        newman run 'In Warrenty Flow.postman_collection.json' \
+        -e 'DEV.postman_environment.json' \
+        -d 'test data.csv' \
         -r cli,htmlextra
     
     
