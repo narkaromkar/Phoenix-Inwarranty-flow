@@ -33,7 +33,8 @@ jobs:
         newman run 'In Warrenty Flow.postman_collection.json' \
         -e 'DEV.postman_environment.json' \
         -d 'test data.csv' \
-        -r cli,htmlextra
+        -r cli,htmlextra \
+        --reporter-htmlextra-export .newman/index.html
         
     - name: upload artifacts
       if: always() #even if previous steps fail execute this step
