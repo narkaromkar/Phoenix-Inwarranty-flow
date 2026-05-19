@@ -34,5 +34,9 @@ jobs:
         -e 'DEV.postman_environment.json' \
         -d 'test data.csv' \
         -r cli,htmlextra
-    
+    - name: upload artifacts
+      uses: actions/upload-artifact@v7.0.1
+      with:
+        name: newman test results
+        path: newman/*.html
     
